@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis Protection | Fornecimento B2B de PPF, Películas e Ferramentas</title>
+<meta name="description" content="O PPF que faltava no Brasil: tecnologia italiana com preço justo. Exclusivo para aplicadores e empresas do setor de proteção automotiva.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0a0b0c;
+  --black-2:#141618;
+  --black-3:#1c1f21;
+  --line: rgba(212,175,105,0.18);
+  --line-soft: rgba(255,255,255,0.08);
+  --white:#f7f6f2;
+  --white-dim: rgba(247,246,242,0.62);
+  --white-faint: rgba(247,246,242,0.38);
+  --gold-deep:#8a6a30;
+  --gold:#c79a45;
+  --gold-mid:#d9b466;
+  --gold-light:#f0dfae;
+  --steel:#8a9096;
+  --font-display:'Copperplate','Copperplate Gothic Bold','Copperplate Gothic Light',Georgia,serif;
+  --font-body:'IBM Plex Sans',Helvetica,Arial,sans-serif;
+  --container: 1180px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%; display:block;}
+a{color:inherit; text-decoration:none;}
+.wrap{max-width:var(--container); margin:0 auto; padding:0 32px;}
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:12px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--gold-mid);
+  font-weight:400;
+}
+.gold-grad{
+  background:linear-gradient(115deg, var(--gold-deep) 0%, var(--gold-mid) 45%, var(--gold-light) 60%, var(--gold) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+section{ position:relative; }
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:15px 30px;
+  font-family:var(--font-body);
+  font-size:13px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  border-radius:2px;
+  cursor:pointer;
+  transition: all .25s ease;
+  white-space:nowrap;
+  border:1px solid transparent;
+}
+.btn-solid{
+  background:linear-gradient(115deg, var(--gold-deep), var(--gold-mid) 55%, var(--gold-light));
+  color:#1a1305;
+  font-weight:700;
+}
+.btn-solid:hover{ filter:brightness(1.08); transform:translateY(-1px); }
+.btn-outline{
+  border-color: rgba(212,175,105,0.55);
+  color:var(--white);
+  background:transparent;
+}
+.btn-outline:hover{ border-color:var(--gold-mid); background:rgba(212,175,105,0.08); }
+.btn-small{ padding:11px 20px; font-size:11px; }
+
+/* ---------- Nav ---------- */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(10,11,12,0.72);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-soft);
+}
+.nav{ display:flex; align-items:center; justify-content:space-between; padding:16px 32px; max-width:var(--container); margin:0 auto; }
+.brand{ display:flex; align-items:center; gap:12px; }
+.brand img{ height:34px; width:auto; }
+.brand-word{ font-family:var(--font-display); font-size:19px; letter-spacing:0.14em; }
+.nav-links{ display:flex; align-items:center; gap:32px; }
+.nav-links a{ font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--white-dim); transition:color .2s; }
+.nav-links a:hover{ color:var(--gold-mid); }
+.nav-cta{ display:flex; gap:12px; }
+
+/* ---------- Hero ---------- */
+.hero{
+  min-height:640px;
+  display:flex;
+  align-items:center;
+  padding:170px 0 110px;
+  background:
+    radial-gradient(ellipse 900px 600px at 82% 18%, rgba(199,154,69,0.14), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 10% 90%, rgba(199,154,69,0.06), transparent 60%),
+    var(--black);
+  position:relative;
+  overflow:hidden;
+}
+.hero-shield-bg{
+  position:absolute;
+  right:-140px; top:50%; transform:translateY(-50%);
+  width:820px; opacity:0.05; pointer-events:none;
+  filter:grayscale(1) brightness(2);
+}
+.hero-inner{ max-width:640px; position:relative; z-index:2; }
+.hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(30px, 4.2vw, 50px);
+  line-height:1.18;
+  letter-spacing:0.01em;
+  margin:18px 0 24px;
+  text-transform:uppercase;
+}
+.hero p.lead{ font-size:17px; color:var(--white-dim); max-width:560px; margin-bottom:34px; }
+.hero .btn-row{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:28px; }
+.hero-chips{ margin:24px 0 28px; }
+.trust-line{ font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--white-faint); }
+
+/* ---------- Card da van (Estamos chegando na sua cidade) ---------- */
+.city-card{ position:relative; border-radius:8px; overflow:hidden; border:1px solid var(--line); box-shadow:0 26px 60px rgba(0,0,0,0.45); }
+.city-card img{ width:100%; height:440px; object-fit:cover; display:block; }
+.city-card-overlay{
+  position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end;
+  padding:44px; background:linear-gradient(0deg, rgba(6,7,8,0.92) 0%, rgba(6,7,8,0.45) 45%, rgba(6,7,8,0) 78%);
+}
+.city-card-overlay .eyebrow{ margin-bottom:10px; display:block; }
+.city-card-overlay h2{
+  font-family:var(--font-display); font-size:clamp(26px,4.4vw,44px); text-transform:uppercase;
+  color:var(--white); line-height:1.2; letter-spacing:0.01em; max-width:640px;
+}
+@media (max-width:640px){
+  .city-card img{ height:280px; }
+  .city-card-overlay{ padding:22px; }
+}
+
+/* ---------- Section shell ---------- */
+.section{ padding:110px 0; }
+.section-tight{ padding:80px 0; }
+.section-head{ max-width:680px; margin-bottom:56px; }
+.section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+.section-head .eyebrow{ margin-bottom:16px; display:block; }
+.section-head h2{
+  font-family:var(--font-display);
+  font-size:clamp(24px, 2.8vw, 36px);
+  line-height:1.25;
+  text-transform:uppercase;
+  letter-spacing:0.01em;
+}
+.section-alt{ background:var(--black-2); }
+
+/* ---------- Seção clara (alternância de peso visual) ---------- */
+.section-light{
+  background:#f7f6f2;
+  --white:#0a0b0c;
+  --white-dim: rgba(10,11,12,0.68);
+  --white-faint: rgba(10,11,12,0.45);
+  --line: rgba(10,11,12,0.16);
+  --line-soft: rgba(10,11,12,0.08);
+  --black-2: rgba(10,11,12,0.05);
+  color:var(--white);
+}
+.section-light .btn-outline{ border-color: rgba(10,11,12,0.35); color:#0a0b0c; }
+.section-light .btn-outline:hover{ background:rgba(10,11,12,0.06); border-color:#0a0b0c; }
+.section-light .media-placeholder{ color:rgba(10,11,12,0.55); }
+
+/* ---------- Statement (frase-chave centralizada) ---------- */
+.statement{ text-align:center; max-width:720px; margin:0 auto; }
+.statement h2{ font-family:var(--font-display); font-size:clamp(22px,2.8vw,32px); text-transform:uppercase; line-height:1.4; margin:18px 0 22px; }
+.statement p{ font-size:15.5px; color:var(--white-dim); margin-bottom:12px; }
+.statement .tagline{ font-family:var(--font-display); font-size:15px; letter-spacing:0.03em; text-transform:uppercase; color:var(--gold-mid); margin-top:26px; }
+.btn-row-split{ display:flex; align-items:center; justify-content:center; gap:44px; flex-wrap:wrap; }
+.btn-row-split a{ min-width:200px; justify-content:center; }
+@media (max-width:640px){ .btn-row-split{ gap:16px; flex-direction:column; } .btn-row-split a{ width:100%; } }
+
+/* ---------- Chips ---------- */
+.chip-row{ display:flex; flex-wrap:wrap; gap:10px; }
+.chip-row.center{ justify-content:center; }
+.chip{
+  border:1px solid var(--line); padding:10px 18px; font-size:12px; letter-spacing:0.08em;
+  text-transform:uppercase; color:var(--white-dim); border-radius:2px; white-space:nowrap;
+}
+.chip .dot{ color:var(--gold-mid); margin-right:8px; }
+
+/* ---------- Media placeholder ---------- */
+.media-placeholder{
+  border:1px dashed var(--line); background:var(--black-2);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:14px; text-align:center; color:var(--white-faint); padding:40px 24px;
+  min-height:280px; position:relative;
+}
+.media-placeholder svg{ width:34px; height:34px; opacity:0.5; }
+.media-placeholder .mp-label{ font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-mid); }
+.media-placeholder .mp-desc{ font-size:13px; color:var(--white-faint); max-width:260px; }
+.media-placeholder.small{ min-height:170px; padding:26px 18px; }
+.media-placeholder.banner{ min-height:300px; }
+
+/* ---------- Selo Tecnologia Italiana ---------- */
+.seal{ position:absolute; top:-30px; right:-30px; width:96px; height:96px; filter:drop-shadow(0 6px 14px rgba(0,0,0,0.5)); z-index:4; }
+.seal-corner{ position:absolute; top:16px; right:16px; width:72px; height:72px; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.55)); z-index:4; }
+
+/* ---------- Sobre (dois blocos) ---------- */
+.video-frame{ border:1px solid var(--line); border-radius:22px; overflow:hidden; box-shadow:0 24px 50px rgba(0,0,0,0.22); max-width:320px; margin:0 auto; }
+.video-frame video{ width:100%; aspect-ratio:9/16; height:auto; object-fit:cover; display:block; background:#000; }
+.two-col{ display:grid; grid-template-columns: 0.95fr 1.05fr; gap:60px; align-items:center; }
+.two-col-text h2{
+  font-family:var(--font-display); font-size:clamp(24px,2.8vw,34px); text-transform:uppercase;
+  line-height:1.25; margin:14px 0 18px;
+}
+.two-col-text p{ color:var(--white-dim); font-size:16px; max-width:460px; margin-bottom:14px; }
+
+/* ---------- Faixa de 3 colunas (confiança / info) ---------- */
+.trio-band{ display:grid; grid-template-columns:repeat(3,1fr); }
+.trio-item{ padding:48px 40px; border-left:1px solid var(--line-soft); display:flex; gap:18px; align-items:flex-start; }
+.trio-item:first-child{ border-left:none; }
+.trio-icon{ flex-shrink:0; width:34px; height:34px; margin-top:2px; }
+.trio-item h3{ font-family:var(--font-display); font-size:17px; text-transform:uppercase; margin-bottom:14px; letter-spacing:0.01em; }
+.trio-item p{ font-size:14.5px; color:var(--white-dim); }
+
+/* ---------- Soluções (cards) ---------- */
+.categories{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+.cat-card{ border:1px solid var(--line); padding:0 0 30px; display:flex; flex-direction:column; height:100%; transition:border-color .25s, transform .25s; position:relative; }
+.cat-card:hover{ border-color:var(--gold-mid); transform:translateY(-4px); }
+.cat-card .media-placeholder{ border:none; border-bottom:1px dashed var(--line); min-height:170px; }
+.cat-media{ position:relative; border-bottom:1px solid var(--line); overflow:hidden; aspect-ratio:1/1; height:auto; }
+.cat-media img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease; }
+.cat-card:hover .cat-media img{ transform:scale(1.05); }
+.cat-card .cat-body{ padding:26px 28px 0; display:flex; flex-direction:column; flex-grow:1; }
+.cat-num{ font-family:var(--font-display); font-size:12px; color:var(--gold-mid); letter-spacing:0.14em; margin-bottom:16px;}
+.cat-card h3{ font-family:var(--font-display); font-size:20px; text-transform:uppercase; margin-bottom:12px; }
+.cat-card p{ font-size:14.5px; color:var(--white-dim); flex-grow:1; margin-bottom:22px;}
+
+/* ---------- Diferenciais ---------- */
+.pillar-featured{
+  border:1px solid var(--gold-deep);
+  background:linear-gradient(160deg, rgba(199,154,69,0.09), transparent 60%), var(--black-2);
+  padding:40px 36px; margin-bottom:1px;
+}
+.pillar-featured-head{ margin-bottom:26px; }
+.pillar-featured-head h3{ font-family:var(--font-display); font-size:22px; text-transform:uppercase; letter-spacing:0.01em; }
+.benefit-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+.benefit-tile{ background:var(--black); padding:22px 16px; text-align:center; }
+.benefit-tile .num{ font-family:var(--font-display); font-size:11px; color:var(--gold-mid); letter-spacing:0.1em; display:block; margin-bottom:10px;}
+.benefit-tile p{ font-size:13.5px; color:var(--white); line-height:1.35; }
+
+.pillars{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); border-top:none; }
+.pillar{ background:var(--black); padding:34px 32px; }
+.pillar .layer-tag{ font-family:var(--font-display); font-size:12px; letter-spacing:0.16em; color:var(--gold-mid); text-transform:uppercase; }
+.pillar h3{ font-family:var(--font-display); font-size:19px; text-transform:uppercase; margin:16px 0 18px; letter-spacing:0.01em;}
+.pillar ul{ list-style:none; display:flex; flex-wrap:wrap; gap:9px; }
+.pillar li{ font-size:12.5px; color:var(--white-dim); padding:9px 14px; border:1px solid var(--line-soft); border-radius:2px; }
+
+/* ---------- Signature: cross section (Guardian) ---------- */
+.crosssection{ padding:100px 0; background:var(--black-2); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
+.cs-head{ max-width:640px; margin-bottom:50px; }
+.cs-diagram{ max-width:920px; margin:0 auto; }
+.cs-cta{ text-align:center; margin-top:44px; }
+
+/* ---------- Animação de iluminação das camadas (baixo -> cima, em loop) ---------- */
+@keyframes layerGlow{
+  0%{ filter:brightness(1) drop-shadow(0 0 0 rgba(212,175,105,0)); }
+  8%{ filter:brightness(1.9) drop-shadow(0 0 16px rgba(212,175,105,0.95)); }
+  26%{ filter:brightness(1) drop-shadow(0 0 0 rgba(212,175,105,0)); }
+  100%{ filter:brightness(1) drop-shadow(0 0 0 rgba(212,175,105,0)); }
+}
+.cs-layer{ animation:layerGlow 2.4s ease-in-out infinite; }
+.cs-layer-1{ animation-delay:0s; }
+.cs-layer-2{ animation-delay:.6s; }
+.cs-layer-3{ animation-delay:1.2s; }
+.cs-layer-4{ animation-delay:1.8s; }
+@media (prefers-reduced-motion: reduce){ .cs-layer{ animation:none; } }
+
+/* ---------- Como comprar (steps) ---------- */
+.steps-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); }
+.step-card{ background:var(--black-2); padding:34px 26px; }
+.step-card .num{ font-family:var(--font-display); font-size:30px; color:var(--gold-mid); display:block; margin-bottom:14px; }
+.step-card h3{ font-family:var(--font-display); font-size:16px; text-transform:uppercase; margin-bottom:10px; letter-spacing:0.01em; }
+.step-card p{ font-size:13.5px; color:var(--white-dim); }
+
+/* ---------- Comparativo (custo da escolha) ---------- */
+.compare-wrap{ border:1px solid var(--line); max-width:820px; margin:0 auto; }
+.compare-head{ display:grid; grid-template-columns:1fr 1fr; }
+.compare-head div{ padding:16px 20px; font-family:var(--font-display); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; text-align:center; }
+.compare-head .col-bad{ color:var(--white-faint); background:var(--black-2); }
+.compare-head .col-good{ color:#1a1305; background:linear-gradient(115deg, var(--gold-deep), var(--gold-mid) 60%, var(--gold-light)); }
+.compare-row{ display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line-soft); }
+.compare-cell{ padding:16px 22px; display:flex; align-items:center; gap:12px; font-size:14px; }
+.compare-cell.bad{ color:var(--white-faint); border-right:1px solid var(--line-soft); }
+.compare-cell.good{ color:var(--white); }
+.compare-cell svg{ width:16px; height:16px; flex-shrink:0; }
+.compare-cell.bad svg{ color:#8a6355; }
+.compare-cell.good svg{ color:var(--gold-mid); }
+.pain-final{ text-align:center; margin-top:34px; }
+.pain-final p{ color:var(--white-dim); font-size:15px; margin-bottom:22px; }
+
+/* ---------- FAQ ---------- */
+.faq-list{ max-width:760px; margin:0 auto; }
+.faq-item{ border-bottom:1px solid var(--line); }
+.faq-item summary{
+  cursor:pointer; padding:22px 4px; font-family:var(--font-display); font-size:15px; text-transform:uppercase;
+  letter-spacing:0.01em; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary::after{ content:'+'; font-family:var(--font-body); font-size:22px; color:var(--gold-mid); flex-shrink:0; transition:transform .25s; font-weight:400; }
+.faq-item[open] summary::after{ transform:rotate(45deg); }
+.faq-item .faq-a{ padding:0 4px 24px; color:var(--white-dim); font-size:14.5px; max-width:640px; }
+
+/* ---------- Newsletter (barra compacta) ---------- */
+.newsletter-bar{ padding:44px 0; }
+.newsletter-inline{ display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap; max-width:920px; margin:0 auto; }
+.newsletter-inline .nl-text{ text-align:left; }
+.newsletter-inline .nl-text strong{ font-family:var(--font-body); font-weight:600; font-size:15px; display:block; margin-bottom:2px; }
+.newsletter-inline .nl-text span{ font-size:13px; color:var(--white-dim); }
+.news-form{ flex-shrink:0; margin:0; max-width:400px; }
+.news-form input{ padding:12px 16px; font-size:13px; }
+.news-form .btn{ padding:12px 22px; font-size:12px; }
+.news-msg{ text-align:left; margin-top:8px; }
+.news-form{ display:flex; gap:12px; max-width:440px; margin:0 auto; }
+.news-form input{
+  flex:1; background:var(--black-2); border:1px solid var(--line); color:var(--white);
+  padding:15px 18px; font-family:var(--font-body); font-size:14px; border-radius:2px;
+}
+.news-form input:focus{ outline:none; border-color:var(--gold-mid); }
+.news-form input::placeholder{ color:var(--white-faint); }
+.news-msg{ margin-top:16px; font-size:13px; color:var(--gold-mid); min-height:18px; }
+
+/* ---------- Footer ---------- */
+footer{ border-top:1px solid var(--line-soft); padding:44px 0 30px; }
+.footer-top-cta{ display:flex; justify-content:flex-end; margin-bottom:40px; }
+.footer-top{ display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:40px; margin-bottom:60px; }
+.footer-brand .brand{ margin-bottom:18px; }
+.brand-full{ align-items:center; }
+.brand-full img{ height:44px; width:auto; }
+.brand-textstack{ display:flex; flex-direction:column; line-height:1.15; }
+.brand-textstack .brand-word{ font-size:19px; }
+.brand-sub{ font-size:9.5px; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold-mid); margin-top:4px; }
+.footer-brand p{ color:var(--white-faint); font-size:13.5px; max-width:280px; }
+.footer-col h4{ font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-mid); margin-bottom:18px; }
+.footer-col a{ display:block; font-size:14px; color:var(--white-dim); margin-bottom:12px; transition:color .2s; }
+.footer-col a:hover{ color:var(--gold-mid); }
+.footer-bottom{ display:flex; justify-content:space-between; align-items:center; padding-top:26px; flex-wrap:wrap; gap:14px;}
+.footer-bottom p{ font-size:12px; color:var(--white-faint); }
+.footer-socials{ display:flex; gap:18px; }
+.footer-socials a{ display:inline-flex; align-items:center; gap:6px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--white-dim); }
+.footer-socials a:hover{ color:var(--gold-mid); }
+.footer-socials svg{ width:15px; height:15px; }
+
+/* ---------- Floating WhatsApp ---------- */
+.wa-float{ position:fixed; bottom:26px; right:26px; z-index:200; display:flex; align-items:center; gap:12px; }
+.wa-tooltip{
+  background:var(--white); color:#151515; padding:12px 16px; border-radius:8px; font-size:13.5px;
+  max-width:230px; box-shadow:0 10px 30px rgba(0,0,0,0.35); position:relative;
+  opacity:0; transform:translateX(10px) scale(0.96); pointer-events:none; transition:all .3s ease;
+}
+.wa-tooltip.show{ opacity:1; transform:translateX(0) scale(1); pointer-events:auto; }
+.wa-tooltip .wa-close{ position:absolute; top:-8px; right:-8px; background:#1c1f21; color:#f7f6f2; border-radius:50%; width:20px; height:20px; font-size:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; border:1px solid rgba(255,255,255,0.15); }
+.wa-btn{
+  width:60px; height:60px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,0.4); cursor:pointer; border:none; flex-shrink:0;
+  animation: wa-pulse 2.6s ease-in-out infinite;
+}
+.wa-btn svg{ width:30px; height:30px; }
+@keyframes wa-pulse{ 0%,100%{ box-shadow:0 8px 24px rgba(0,0,0,0.4), 0 0 0 0 rgba(37,211,102,0.5);} 50%{ box-shadow:0 8px 24px rgba(0,0,0,0.4), 0 0 0 10px rgba(37,211,102,0);} }
+
+/* ---------- Reveal animation ---------- */
+.reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  .wa-btn{ animation:none; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px){
+  .two-col{ grid-template-columns:1fr; }
+  .hero-grid{ grid-template-columns:1fr; gap:36px; }
+  .hero-inner{ max-width:100%; }
+  .hero-media img{ max-width:520px; margin:0 auto; }
+  .pillars{ grid-template-columns:1fr; }
+  .categories{ grid-template-columns:1fr; }
+  .benefit-grid{ grid-template-columns:repeat(2,1fr); }
+  .steps-grid{ grid-template-columns:repeat(2,1fr); }
+  .trio-band{ grid-template-columns:1fr; }
+  .trio-item{ border-left:none; border-top:1px solid var(--line-soft); }
+  .trio-item:first-child{ border-top:none; }
+  .footer-top{ grid-template-columns:1fr 1fr; }
+  .nav-links{ display:none; }
+}
+@media (max-width: 640px){
+  .wrap{ padding:0 20px; }
+  .hero{ padding:118px 0 56px; }
+  .hero-shield-bg{ width:420px; opacity:0.04; }
+  .hero-grid{ gap:26px; }
+  .hero-media img{ border-radius:4px; }
+  .hero h1{ margin:12px 0 16px; line-height:1.16; }
+  .hero-chips{ margin:14px 0 18px; gap:8px; }
+  .hero .chip{ padding:8px 14px; font-size:11px; }
+  .hero p.lead{ font-size:14.5px; margin-bottom:20px; }
+  .hero .btn-row{ margin-bottom:0; gap:12px; }
+  .hero .eyebrow{ font-size:11px; }
+  .section{ padding:76px 0; }
+  .crosssection{ padding:76px 0; }
+  .footer-top-cta{ justify-content:center; margin-bottom:32px; }
+  .footer-top{ grid-template-columns:1fr; gap:34px; }
+  .news-form{ flex-direction:column; }
+  .nav-cta .btn:first-child{ display:none; }
+  .benefit-grid{ grid-template-columns:1fr 1fr; }
+  .steps-grid{ grid-template-columns:1fr; }
+  .media-placeholder{ min-height:200px; }
+  .video-frame{ border-radius:16px; max-width:260px; }
+  .compare-head div{ font-size:11px; padding:12px 10px; }
+  .compare-cell{ font-size:12.5px; padding:12px 12px; gap:8px; }
+  .compare-cell.bad{ border-right:none; }
+  .seal{ width:74px; height:74px; top:-20px; right:-16px; }
+  .seal-corner{ width:56px; height:56px; top:10px; right:10px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">
+      <img src="genesis-logo-icon.png" alt="Genesis">
+      <span class="brand-word">GENESIS</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#solucoes">Soluções</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#guardian">Guardian</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#solucoes" class="btn btn-outline btn-small">Conhecer Soluções</a>
+      <a href="#" class="btn btn-solid btn-small js-wa-link">Falar com a Equipe</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-shield-bg" src="genesis-logo-icon.png" alt="">
+    <div class="wrap">
+      <div class="hero-inner reveal in">
+        <span class="eyebrow">Fornecimento exclusivo para aplicadores e empresas do setor</span>
+        <h1>PPF, películas e ferramentas.<br>Tecnologia <span class="gold-grad">italiana</span>, preço justo.</h1>
+        <div class="chip-row hero-chips">
+          <span class="chip"><span class="dot">•</span>PPF linha Guardian</span>
+          <span class="chip"><span class="dot">•</span>Películas automotivas</span>
+          <span class="chip"><span class="dot">•</span>Ferramentas profissionais</span>
+        </div>
+        <p class="lead">Da proteção de pintura às películas e às ferramentas de instalação: a Genesis reúne, num só fornecedor, tudo o que a sua empresa precisa para aplicar com mais segurança e vender com mais confiança.</p>
+        <div class="btn-row">
+          <a href="#solucoes" class="btn btn-solid">Conhecer Soluções</a>
+          <a href="#" class="btn btn-outline js-wa-link">Falar com a Equipe</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VAN / CHEGANDO NA SUA CIDADE -->
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="city-card reveal">
+        <img src="genesis-hero-van.jpg" alt="Van da Genesis Protection identificada com a marca">
+        <div class="city-card-overlay">
+          <span class="eyebrow">Genesis na estrada</span>
+          <h2>Estamos chegando na sua cidade!</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCERIA (claro) -->
+  <section class="section-tight section-light">
+    <div class="wrap">
+      <div class="statement reveal">
+        <span class="eyebrow">Uma parceria que respeita o seu negócio</span>
+        <h2>Parceria de verdade para quem vive da aplicação.</h2>
+        <div class="chip-row center" style="margin:26px 0;">
+          <span class="chip"><span class="dot">•</span>Suporte próximo</span>
+          <span class="chip"><span class="dot">•</span>Entrega dentro do prazo</span>
+          <span class="chip"><span class="dot">•</span>Produtos de alta qualidade</span>
+        </div>
+        <p>Mais segurança para a sua empresa conquistar a confiança e a preferência dos clientes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAIXA DE CONFIANÇA -->
+  <section>
+    <div class="wrap" style="padding:0;">
+      <div class="trio-band reveal">
+        <div class="trio-item">
+          <svg class="trio-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="trioGrad1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0dfae"/><stop offset="0.5" stop-color="#c79a45"/><stop offset="1" stop-color="#8a6a30"/></linearGradient></defs>
+            <circle cx="24" cy="24" r="21" fill="none" stroke="url(#trioGrad1)" stroke-width="2"/>
+            <path d="M15 24l6 6 12-13" fill="none" stroke="url(#trioGrad1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <h3>Mais controle</h3>
+            <p>Orientação para escolher a solução adequada a cada tipo de entrega.</p>
+          </div>
+        </div>
+        <div class="trio-item">
+          <svg class="trio-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="trioGrad2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0dfae"/><stop offset="0.5" stop-color="#c79a45"/><stop offset="1" stop-color="#8a6a30"/></linearGradient></defs>
+            <circle cx="24" cy="24" r="21" fill="none" stroke="url(#trioGrad2)" stroke-width="2"/>
+            <path d="M15 24l6 6 12-13" fill="none" stroke="url(#trioGrad2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <h3>Mais possibilidades</h3>
+            <p>Um portfólio que acompanha diferentes níveis de aplicação e posicionamento.</p>
+          </div>
+        </div>
+        <div class="trio-item">
+          <svg class="trio-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="trioGrad3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0dfae"/><stop offset="0.5" stop-color="#c79a45"/><stop offset="1" stop-color="#8a6a30"/></linearGradient></defs>
+            <circle cx="24" cy="24" r="21" fill="none" stroke="url(#trioGrad3)" stroke-width="2"/>
+            <path d="M15 24l6 6 12-13" fill="none" stroke="url(#trioGrad3)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <h3>Relação transparente</h3>
+            <p>Atendimento profissional, comunicação clara e respeito à sua carteira de clientes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUÇÕES -->
+  <section class="section" id="solucoes">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Portfólio Genesis</span>
+        <h2>Soluções para diferentes necessidades do seu negócio</h2>
+      </div>
+      <div class="categories reveal">
+        <div class="cat-card">
+          <div class="seal-corner" id="sealGuardian"></div>
+          <div class="cat-media">
+            <img src="genesis-card-guardian.jpg" alt="Rolos de PPF da linha Guardian, Genesis Protection">
+          </div>
+          <div class="cat-body">
+            <span class="cat-num">01 · PPF</span>
+            <h3>Guardian PPF</h3>
+            <p>Proteção, acabamento e opções de linha para diferentes níveis de entrega, da essencial à premium.</p>
+            <a href="#guardian" class="btn btn-outline btn-small">Conhecer a Guardian</a>
+          </div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-media">
+            <img src="genesis-card-peliculas.jpg" alt="Películas automotivas Genesis Protection">
+          </div>
+          <div class="cat-body">
+            <span class="cat-num">02 · Películas</span>
+            <h3>Películas Automotivas</h3>
+            <p>Linhas para ampliar o portfólio e entregar conforto, proteção e desempenho ao cliente.</p>
+            <a href="#" class="btn btn-outline btn-small js-wa-msg" data-msg="Olá! Gostaria de mais informações sobre as películas automotivas da Genesis.">Consultar Opções</a>
+          </div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-media">
+            <img src="genesis-card-ferramentas.jpg" alt="Kit de ferramentas profissionais Genesis Protection">
+          </div>
+          <div class="cat-body">
+            <span class="cat-num">03 · Ferramentas</span>
+            <h3>Ferramentas Profissionais</h3>
+            <p>Itens escolhidos para dar mais agilidade, precisão e controle em cada etapa do processo.</p>
+            <a href="#" class="btn btn-outline btn-small js-wa-msg" data-msg="Olá! Gostaria de mais informações sobre as ferramentas profissionais da Genesis.">Ver Ferramentas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE A GENESIS (claro) -->
+  <section class="section section-light" id="sobre">
+    <div class="wrap two-col">
+      <div class="video-frame reveal">
+        <video controls preload="metadata" poster="genesis-video-poster.jpg" playsinline>
+          <source src="genesis-video-sobre.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo em HTML5.
+        </video>
+      </div>
+      <div class="two-col-text reveal">
+        <span class="eyebrow">Genesis Protection</span>
+        <h2>A Genesis fornece.<br>Sua empresa assina o resultado.</h2>
+        <p>Produto de qualidade, material escolhido a dedo e resultado que precisa aparecer na prática, da aplicação ao acabamento final.</p>
+        <p>Antes de entrar no portfólio, cada solução passa por avaliação de materiais, testes comparativos e aplicação em situações reais, para que o resultado se comprove na bancada, não só no papel.</p>
+        <div class="chip-row" style="margin-top:20px;">
+          <span class="chip"><span class="dot">•</span>Material escolhido a dedo</span>
+          <span class="chip"><span class="dot">•</span>Testado em aplicações reais</span>
+          <span class="chip"><span class="dot">•</span>Resultado visível na prática</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="section" id="diferenciais">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Produto, processo e parceria</span>
+        <h2>Uma boa escolha precisa funcionar na bancada e no negócio</h2>
+      </div>
+
+      <div class="pillar-featured reveal">
+        <div class="pillar-featured-head">
+          <span class="layer-tag">Em destaque</span>
+          <h3 style="margin-top:8px;">O que buscamos entregar em cada solução</h3>
+        </div>
+        <div class="benefit-grid">
+          <div class="benefit-tile"><span class="num">01</span><p>Escolha mais segura</p></div>
+          <div class="benefit-tile"><span class="num">02</span><p>Aplicação mais previsível</p></div>
+          <div class="benefit-tile"><span class="num">03</span><p>Melhor aproveitamento</p></div>
+          <div class="benefit-tile"><span class="num">04</span><p>Acabamento consistente</p></div>
+          <div class="benefit-tile"><span class="num">05</span><p>Margem mais saudável</p></div>
+        </div>
+      </div>
+
+      <div class="pillars reveal">
+        <div class="pillar">
+          <span class="layer-tag">Critério técnico</span>
+          <h3>Antes de entrar no portfólio</h3>
+          <ul>
+            <li>Avaliação de materiais</li>
+            <li>Testes comparativos</li>
+            <li>Aplicação em situações reais</li>
+            <li>Análise de top coat e adesivo</li>
+            <li>Conformação e acabamento</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <span class="layer-tag">Suporte comercial</span>
+          <h3>Antes e depois do pedido</h3>
+          <ul>
+            <li>Indicação conforme o projeto</li>
+            <li>Apresentação clara das opções</li>
+            <li>Atendimento para profissionais</li>
+            <li>Respeito às oportunidades comerciais</li>
+            <li>Canal próximo para dúvidas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARDIAN -->
+  <section class="crosssection" id="guardian">
+    <div class="wrap">
+      <div class="cs-head reveal">
+        <span class="eyebrow">Linha Guardian</span>
+        <h2 style="font-family:var(--font-display); font-size:clamp(24px,2.8vw,34px); text-transform:uppercase; line-height:1.3; margin-bottom:16px;">PPF pensado para diferentes níveis de entrega</h2>
+        <p style="color:var(--white-dim); font-size:15.5px; max-width:640px;">Da linha essencial à premium, a equipe Genesis ajuda você a encontrar a opção adequada ao projeto, ao posicionamento e à rotina da sua empresa.</p>
+      </div>
+      <div class="cs-diagram reveal" id="cs-diagram-holder"></div>
+      <div class="cs-cta reveal">
+        <a href="#" class="btn btn-solid js-wa-msg" data-msg="Olá! Gostaria de receber o catálogo da linha Guardian PPF.">Receber Catálogo Guardian</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTO DA ESCOLHA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto; margin-right:auto;">
+        <span class="eyebrow">Custo real da aplicação</span>
+        <h2>O menor preço nem sempre reduz o custo da aplicação</h2>
+      </div>
+      <div class="compare-wrap reveal">
+        <div class="compare-head">
+          <div class="col-bad">Escolha sem suporte</div>
+          <div class="col-good">Experiência Genesis</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Solução escolhida só pelo preço</div>
+          <div class="compare-cell good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Indicação conforme o projeto</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Processo mais imprevisível</div>
+          <div class="compare-cell good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Mais controle na aplicação</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Maior risco de desperdício</div>
+          <div class="compare-cell good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Melhor aproveitamento do material</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Pós-venda distante</div>
+          <div class="compare-cell good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Canal próximo para dúvidas</div>
+        </div>
+      </div>
+      <div class="pain-final reveal">
+        <p>Escolher melhor também faz parte do resultado que a sua empresa entrega.</p>
+        <a href="#" class="btn btn-solid js-wa-msg" data-msg="Olá! Quero encontrar a solução certa em PPF, películas ou ferramentas para a minha empresa.">Encontrar a Solução Certa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (claro) -->
+  <section class="section section-light" id="faq">
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto; margin-right:auto;">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2>Perguntas de quem vai comprar</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>A Genesis atende consumidor final?</summary>
+          <div class="faq-a">Não. O atendimento é exclusivo para aplicadores e empresas do setor de proteção automotiva.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Quais produtos a Genesis oferece?</summary>
+          <div class="faq-a">PPF da linha Guardian, películas automotivas e ferramentas profissionais. O portfólio pode receber novas soluções conforme a curadoria da marca.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Como escolher a linha Guardian?</summary>
+          <div class="faq-a">Nossa equipe considera o tipo de projeto, o nível de entrega e a rotina da sua empresa para apresentar as opções mais adequadas.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Como recebo o catálogo e as condições?</summary>
+          <div class="faq-a">Fale com a equipe pelo WhatsApp. Você recebe o catálogo atualizado e as informações comerciais de acordo com a sua necessidade.</div>
+        </details>
+        <details class="faq-item">
+          <summary>A Genesis atende minha região?</summary>
+          <div class="faq-a">Entre em contato para consultar disponibilidade, prazo e condições de fornecimento para a sua cidade.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Existe suporte após a compra?</summary>
+          <div class="faq-a">Sim. A proposta é manter um canal próximo para dúvidas de produto e orientações relacionadas ao fornecimento.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAMADA FINAL -->
+  <section class="section">
+    <div class="wrap">
+      <div class="statement reveal">
+        <span class="eyebrow">Genesis Protection</span>
+        <h2>Mais possibilidades para quem vive da aplicação</h2>
+        <p>Conheça o portfólio, converse com a nossa equipe e encontre a solução adequada para a sua empresa.</p>
+        <div class="btn-row-split reveal" style="margin-top:26px;">
+          <a href="#" class="btn btn-solid js-wa-link">Falar no WhatsApp</a>
+          <a href="#" class="btn btn-outline js-wa-msg" data-msg="Olá! Gostaria de receber o catálogo completo da Genesis (PPF, películas e ferramentas).">Receber Catálogo</a>
+        </div>
+        <p class="trust-line" style="margin-top:24px;">Atendimento exclusivo para aplicadores e empresas do setor.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top-cta reveal in">
+      <a href="#" class="btn btn-solid btn-small js-wa-msg" data-msg="Olá! Tenho interesse em me tornar revendedor/parceiro da Genesis Protection.">Seja um Revendedor</a>
+    </div>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="brand brand-full">
+          <img src="genesis-logo-icon.png" alt="Genesis" style="height:44px;">
+          <span class="brand-textstack">
+            <span class="brand-word">GENESIS</span>
+            <span class="brand-sub">Advanced Protection Film</span>
+          </span>
+        </a>
+        <p>PPF, películas automotivas e ferramentas profissionais para quem vive da aplicação.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a href="#solucoes">Soluções</a>
+        <a href="#sobre">A Genesis</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#guardian">Guardian</a>
+        <a href="#faq">Dúvidas</a>
+      </div>
+      <div class="footer-col">
+        <h4>Portfólio</h4>
+        <a href="#guardian">Guardian PPF</a>
+        <a href="#solucoes">Películas Automotivas</a>
+        <a href="#solucoes">Ferramentas Profissionais</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="#" class="js-wa-link">WhatsApp</a>
+        <a href="#" class="js-wa-msg" data-msg="Olá! Gostaria de receber o catálogo completo da Genesis (PPF, películas e ferramentas).">Receber catálogo</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Genesis Protection. Todos os direitos reservados. Atendimento exclusivo B2B.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/genesisprotection_/" target="_blank" rel="noopener" aria-label="Instagram da Genesis Protection">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a href="#" class="js-wa-link">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<div class="wa-float">
+  <div class="wa-tooltip" id="waTooltip">
+    <span class="wa-close" id="waClose">✕</span>
+    Quer conhecer mais sobre a empresa? Chame no WhatsApp
+  </div>
+  <button class="wa-btn js-wa-link" id="waBtn" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.02 3C9.4 3 4 8.38 4 15c0 2.17.58 4.28 1.68 6.14L4 29l8.06-1.65A11.94 11.94 0 0 0 16.02 27C22.63 27 28 21.62 28 15S22.63 3 16.02 3Z" fill="#fff"/>
+      <path d="M16 5C10.48 5 6 9.48 6 15c0 1.85.5 3.58 1.38 5.07L6 25l5.1-1.33A9.94 9.94 0 0 0 16 25c5.52 0 10-4.48 10-10S21.52 5 16 5Z" fill="#25D366"/>
+      <path d="M12.3 9.9c-.24-.53-.5-.54-.73-.55h-.62c-.22 0-.57.08-.87.4-.3.32-1.14 1.11-1.14 2.71 0 1.6 1.17 3.14 1.33 3.36.16.22 2.27 3.63 5.6 4.95 2.77 1.1 3.33.88 3.93.82.6-.06 1.94-.79 2.21-1.55.27-.76.27-1.42.19-1.55-.08-.14-.3-.22-.62-.38-.32-.16-1.94-.96-2.24-1.07-.3-.11-.52-.16-.73.16-.22.32-.85 1.07-1.04 1.29-.19.22-.38.24-.7.08-.32-.16-1.35-.5-2.57-1.58-.95-.85-1.59-1.89-1.78-2.21-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.41-.03-.57-.08-.16-.7-1.77-.99-2.41Z" fill="#fff"/>
+    </svg>
+  </button>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"A Genesis atende consumidor final?","acceptedAnswer":{"@type":"Answer","text":"Não. O atendimento é exclusivo para aplicadores e empresas do setor de proteção automotiva."}},
+    {"@type":"Question","name":"Quais produtos a Genesis oferece?","acceptedAnswer":{"@type":"Answer","text":"PPF da linha Guardian, películas automotivas e ferramentas profissionais. O portfólio pode receber novas soluções conforme a curadoria da marca."}},
+    {"@type":"Question","name":"Como escolher a linha Guardian?","acceptedAnswer":{"@type":"Answer","text":"Nossa equipe considera o tipo de projeto, o nível de entrega e a rotina da sua empresa para apresentar as opções mais adequadas."}},
+    {"@type":"Question","name":"Como recebo o catálogo e as condições?","acceptedAnswer":{"@type":"Answer","text":"Fale com a equipe pelo WhatsApp. Você recebe o catálogo atualizado e as informações comerciais de acordo com a sua necessidade."}},
+    {"@type":"Question","name":"A Genesis atende minha região?","acceptedAnswer":{"@type":"Answer","text":"Entre em contato para consultar disponibilidade, prazo e condições de fornecimento para a sua cidade."}},
+    {"@type":"Question","name":"Existe suporte após a compra?","acceptedAnswer":{"@type":"Answer","text":"Sim. A proposta é manter um canal próximo para dúvidas de produto e orientações relacionadas ao fornecimento."}}
+  ]
+}
+</script>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Selo Tecnologia Italiana (SVG gerado via JS, reutilizável) */
+function sealSVG(uid){
+  return `
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+    <defs>
+      <linearGradient id="sealGrad_${uid}" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f0dfae"/><stop offset="0.5" stop-color="#c79a45"/><stop offset="1" stop-color="#8a6a30"/>
+      </linearGradient>
+    </defs>
+    <circle cx="100" cy="100" r="94" fill="#0a0b0c" stroke="url(#sealGrad_${uid})" stroke-width="2"/>
+    <circle cx="100" cy="100" r="86" fill="none" stroke="url(#sealGrad_${uid})" stroke-width="1"/>
+    <g fill="url(#sealGrad_${uid})">
+      <ellipse cx="133.8" cy="27.5" rx="11" ry="4.5" transform="rotate(25 133.8 27.5)"/>
+      <ellipse cx="161.3" cy="48.6" rx="11" ry="4.5" transform="rotate(50 161.3 48.6)"/>
+      <ellipse cx="177.3" cy="79.3" rx="11" ry="4.5" transform="rotate(75 177.3 79.3)"/>
+      <ellipse cx="178.8" cy="113.9" rx="11" ry="4.5" transform="rotate(100 178.8 113.9)"/>
+      <ellipse cx="165.5" cy="145.9" rx="11" ry="4.5" transform="rotate(125 165.5 145.9)"/>
+      <ellipse cx="140" cy="169.3" rx="11" ry="4.5" transform="rotate(150 140 169.3)"/>
+      <ellipse cx="111.1" cy="179.2" rx="10" ry="4" transform="rotate(172 111.1 179.2)"/>
+    </g>
+    <g fill="url(#sealGrad_${uid})" transform="translate(200,0) scale(-1,1)">
+      <ellipse cx="133.8" cy="27.5" rx="11" ry="4.5" transform="rotate(25 133.8 27.5)"/>
+      <ellipse cx="161.3" cy="48.6" rx="11" ry="4.5" transform="rotate(50 161.3 48.6)"/>
+      <ellipse cx="177.3" cy="79.3" rx="11" ry="4.5" transform="rotate(75 177.3 79.3)"/>
+      <ellipse cx="178.8" cy="113.9" rx="11" ry="4.5" transform="rotate(100 178.8 113.9)"/>
+      <ellipse cx="165.5" cy="145.9" rx="11" ry="4.5" transform="rotate(125 165.5 145.9)"/>
+      <ellipse cx="140" cy="169.3" rx="11" ry="4.5" transform="rotate(150 140 169.3)"/>
+      <ellipse cx="111.1" cy="179.2" rx="10" ry="4" transform="rotate(172 111.1 179.2)"/>
+    </g>
+    <path d="M100,8 L102.9,14.9 L110.5,15.5 L104.7,20.4 L106.5,27.8 L100,23.7 L93.5,27.8 L95.3,20.4 L89.5,15.5 L97.1,14.9 Z" fill="url(#sealGrad_${uid})"/>
+    <text x="100" y="88" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="700" letter-spacing="1.5" fill="#f7f6f2">TECNOLOGIA</text>
+    <text x="100" y="110" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="700" letter-spacing="1.5" fill="#f7f6f2">ITALIANA</text>
+    <line x1="70" y1="122" x2="130" y2="122" stroke="url(#sealGrad_${uid})" stroke-width="1"/>
+    <text x="100" y="138" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="9" letter-spacing="2" fill="#d9b466">GENESIS GUARDIAN</text>
+  </svg>`;
+}
+document.getElementById('sealGuardian').innerHTML = sealSVG('guardian');
+
+/* ============================================
+   WHATSAPP: troque o número abaixo pelo real
+   Formato: código do país + DDD + número, só dígitos
+   Ex: "5511999998888"
+============================================ */
+const WHATSAPP_NUMBER = "5511991766474";
+const WHATSAPP_MSG = "Olá! Sou aplicador/empresa do setor e quero conhecer as soluções da Genesis.";
+const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
+document.querySelectorAll('.js-wa-link').forEach(el => {
+  el.setAttribute('href', waUrl);
+  el.setAttribute('target', '_blank');
+  el.setAttribute('rel', 'noopener');
+});
+
+/* Botões com mensagem personalizada por categoria (catálogo, revenda, etc.) */
+document.querySelectorAll('.js-wa-msg').forEach(el => {
+  const msg = el.getAttribute('data-msg') || WHATSAPP_MSG;
+  el.setAttribute('href', `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`);
+  el.setAttribute('target', '_blank');
+  el.setAttribute('rel', 'noopener');
+});
+
+/* Tooltip do botão flutuante */
+const tooltip = document.getElementById('waTooltip');
+setTimeout(() => tooltip.classList.add('show'), 1600);
+document.getElementById('waClose').addEventListener('click', (e) => {
+  e.preventDefault(); e.stopPropagation();
+  tooltip.classList.remove('show');
+});
+
+/* Reveal on scroll */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in'); });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+
+/* Cross-section diagram (SVG): Guardian, Top Coat / TPU / Adesivo / Liner */
+document.getElementById('cs-diagram-holder').innerHTML = `
+<svg viewBox="0 0 920 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+  <defs>
+    <linearGradient id="gTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0dfae"/><stop offset="1" stop-color="#c79a45"/>
+    </linearGradient>
+    <linearGradient id="gTpu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9e6de"/><stop offset="1" stop-color="#b9b3a2"/>
+    </linearGradient>
+    <linearGradient id="gAdh" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a6a30"/><stop offset="1" stop-color="#5c451f"/>
+    </linearGradient>
+    <linearGradient id="gLin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3d40"/><stop offset="1" stop-color="#232527"/>
+    </linearGradient>
+  </defs>
+  <g font-family="IBM Plex Sans, sans-serif">
+    <rect class="cs-layer cs-layer-4" x="120" y="30" width="560" height="26" fill="url(#gTop)"/>
+    <line x1="680" y1="43" x2="760" y2="43" stroke="#c79a45" stroke-width="1"/>
+    <text x="770" y="38" fill="#f0dfae" font-size="12" letter-spacing="1">TOP COAT</text>
+    <text x="770" y="54" fill="#8a9096" font-size="10.5">Brilho, transparência e resistência a manchas</text>
+
+    <rect class="cs-layer cs-layer-3" x="120" y="66" width="560" height="60" fill="url(#gTpu)"/>
+    <line x1="680" y1="96" x2="760" y2="96" stroke="#c79a45" stroke-width="1"/>
+    <text x="770" y="91" fill="#f0dfae" font-size="12" letter-spacing="1">TPU</text>
+    <text x="770" y="107" fill="#8a9096" font-size="10.5">Flexibilidade e conformação nas curvas</text>
+
+    <rect class="cs-layer cs-layer-2" x="120" y="136" width="560" height="22" fill="url(#gAdh)"/>
+    <line x1="680" y1="147" x2="760" y2="147" stroke="#c79a45" stroke-width="1"/>
+    <text x="770" y="142" fill="#f0dfae" font-size="12" letter-spacing="1">ADESIVO</text>
+    <text x="770" y="158" fill="#8a9096" font-size="10.5">Fixação e segurança nas bordas e quinas</text>
+
+    <rect class="cs-layer cs-layer-1" x="120" y="168" width="560" height="18" fill="url(#gLin)"/>
+    <line x1="680" y1="177" x2="760" y2="177" stroke="#c79a45" stroke-width="1"/>
+    <text x="770" y="181" fill="#f0dfae" font-size="12" letter-spacing="1">LINER</text>
+    <text x="770" y="197" fill="#8a9096" font-size="10.5">Protege o adesivo até a aplicação</text>
+
+    <line x1="120" y1="215" x2="680" y2="215" stroke="#3a3d40" stroke-width="1"/>
+    <text x="120" y="238" fill="#5f6568" font-size="10">CAMADA 01</text>
+    <text x="680" y="238" fill="#5f6568" font-size="10" text-anchor="end">CAMADA 04</text>
+  </g>
+</svg>`;
+</script>
+
+</body>
+</html>
